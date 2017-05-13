@@ -15,6 +15,7 @@ cd Pomodorotodo
 npm install
 # Run the app
 npm start
+```
 
 ## License
 
