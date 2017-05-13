@@ -4,4 +4,4 @@ This is a simple todo-list Electron application combined with the [Pomodoro tech
 
 ## License
 
-[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE.md)
+[GNU GENERAL PUBLIC LICENSE Version 3](LICENSE)
