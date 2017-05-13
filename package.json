@@ -10,7 +10,7 @@
         "build:osx": "electron-packager . Pomodorotodo --out=dist --ignore='^/dist$' --overwrite --prune --arch=all --platform=darwin --electron-version",
         "build": "npm run build:win && npm run build:linux && npm run build:osx"
     },
-    "repository": "",
+    "repository": "https://github.com/i42pavar/Pomodorotodo.git",
     "keywords": [
         "Electron",
         "Pomodoro",

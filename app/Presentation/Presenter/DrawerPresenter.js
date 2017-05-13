@@ -76,11 +76,15 @@ var DrawerPresenter = (function() {
     }
 
     function onMailtoCallBack() {
-        shell.openExternal('mailto:soysanrafael@gmail.com');
+        shell.openExternal('mailto:i42pavar@uco.es');
     }
 
     function onLicenseCallBack() {
-        shell.openItem('LICENSE.md');
+        shell.openItem('LICENSE');
+    }
+
+    function onGithubCallBack() {
+        shell.openExternal('https://github.com/i42pavar/Pomodorotodo');
     }
 
     ////////////////////////////////////////RepositoryCallBacks
@@ -129,6 +133,7 @@ var DrawerPresenter = (function() {
             drawerView.listenResetPomodoroBeforeLBEvents(onResetPomodorosBeforeLBCallBack);
             drawerView.listenMailtoEvents(onMailtoCallBack);
             drawerView.listenLicenseEvents(onLicenseCallBack);
+            drawerView.listenGithubEvents(onGithubCallBack);
 
             getPreferencesCommand.execute(onPreferencesRecoveredCallBack);
         }

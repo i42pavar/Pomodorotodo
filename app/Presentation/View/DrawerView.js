@@ -108,4 +108,10 @@ DrawerView.prototype.listenLicenseEvents = function(callBack) {
     });
 };
 
+DrawerView.prototype.listenGithubEvents = function(callBack) {
+    $('.github').on('click', function() {
+        callBack();
+    });
+};
+
 module.exports = DrawerView;
