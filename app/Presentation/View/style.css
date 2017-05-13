@@ -1,0 +1,35 @@
+.tachado {
+    text-decoration: line-through;
+}
+
+.drag-area {
+    -webkit-app-region: drag;
+}
+
+.nodrag-area {
+    -webkit-app-region: no-drag;
+}
+
+#taskList {
+    padding: 0 !important;
+}
+
+
+/*
+input[type=range]+.thumb .value {
+    display: block;
+    width: 30px;
+    text-align: center;
+    color: #26a69a;
+    font-size: 0px;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+*/
+
+input[type=range]+.thumb.active .value {
+    /*color: #fff !important;*/
+    margin-left: -1px !important;
+    margin-top: -8px !important;
+    font-size: 16px !important;
+}

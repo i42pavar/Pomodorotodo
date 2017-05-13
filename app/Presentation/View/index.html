@@ -1,0 +1,205 @@
+<!--
+    Pomodoro, a simple todo-list Electron application combined with the Pomodoro technique
+    Copyright (C) <2017>  Rafael Jesús Palomino Vargas
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pomodorotodo</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="../../../node_modules/materialize-css/dist/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+
+</head>
+
+<body>
+
+    <div class="navbar-fixed drag-area">
+        <nav class="z-depth-4 indigo darken-3">
+            <div class="nav-wrapper">
+                <ul class="right nodrag-area">
+                    <li><a href="#!" class="right"><i class="material-icons" id="minimize">remove</i></a></li>
+                    <li><a href="#!" class="right"><i class="material-icons" id="maximize">crop_square</i></a></li>
+                    <li><a href="#!" class="right"><i class="material-icons" id="exit">clear</i></a></li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse show-on-large nodrag-area"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
+
+
+    <div id="drawer">
+        <ul id="slide-out" class="side-nav">
+            <li>
+                <div class="userView indigo darken-3">
+                    <a><img class="circle" src="./images/logo_512.png"></a>
+                    <a><span class="white-text name">Pomodorotodo</span></a>
+                    <a href="#!"><span class="white-text email">soysanrafael@gmail.com</span></a>
+                </div>
+            </li>
+            <li>
+                <ul class="collapsible" data-collapsible="expandable">
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">equalizer</i>Estadísticas</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <div class="col s10">
+                                    <h6>Tiempo de trabajo:</h6>
+                                </div>
+                                <div class="col s2">
+                                    <h6 class="right" id="wTime"></h6>
+                                </div>
+
+                                <div class="col s10">
+                                    <h6>Tiempo de descanso corto:</h6>
+                                </div>
+                                <div class="col s2">
+                                    <h6 class="right" id="sbTime"></h6>
+                                </div>
+
+                                <div class="col s10">
+                                    <h6>Tiempo de descanso largo:</h6>
+                                </div>
+                                <div class="col s2">
+                                    <h6 class="right" id="lbTime"></h6>
+                                </div>
+
+                                <div class="col s10">
+                                    <h6>Pomodoros completados:</h6>
+                                </div>
+                                <div class="col s2">
+                                    <h6 class="right" id="nPomodoros"></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header"><i class="material-icons">tune</i>Configuración</div>
+                        <div class="collapsible-body">
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <h6>Duración pomodoro</h6>
+                                        <p class="range-field col s10">
+                                            <input type="range" id="pomodoroPref" min="1" max="60" />
+                                        </p>
+                                        <p class="col s2">
+                                            <a href="#!" class="secondary-content col s2">
+                                                <i class="material-icons" id="resetP">replay</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Duración descanso corto</h6>
+                                        <p class="range-field col s10">
+                                            <input type="range" id="shortBreakPref" min="1" max="60" />
+                                        </p>
+                                        <p class="col s2">
+                                            <a href="#!" class="secondary-content col s2">
+                                                <i class="material-icons" id="resetSB">replay</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Duración descanso largo</h6>
+                                        <p class="range-field col s10">
+                                            <input type="range" id="longBreakPref" min="1" max="60" />
+                                        </p>
+                                        <p class="col s2">
+                                            <a href="#!" class="secondary-content col s2">
+                                                <i class="material-icons" id="resetLB">replay</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                    <div class="row">
+                                        <h6>Pomodoros antes de descanso largo</h6>
+                                        <p class="range-field col s10">
+                                            <input type="range" id="nPBeforeLBPref" min="1" max="10" />
+                                        </p>
+                                        <p class="col s2">
+                                            <a href="#!" class="secondary-content col s2">
+                                                <i class="material-icons" id="resetPBLB">replay</i>
+                                            </a>
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Acerca de</a></li>
+            <li><a class="waves-effect license" href="#!">Licencia</a></li>
+        </ul>
+    </div>
+
+    <div class="container" id="workSession">
+        <div class="row">
+            <ul class="collection with-header col s12 z-depth-3" id="taskList">
+                <li class="collection-header">
+                    <div class="row">
+                        <div class="col s12 right-align">
+                            <div class="fixed-action-btn horizontal" style="position: relative; top:19px">
+                                <div class="timer">
+                                    <span class="minutes" style="font-size: 48px; color:tomato;"></span>
+                                    <span class="separator" style="font-size: 39px; color:tomato;">:</span>
+                                    <span class="seconds" style="font-size: 30px; color:tomato;"></span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div class="btn-floating green" id="play"><i class="material-icons">play_arrow</i></div>
+                                    </li>
+                                    <li>
+                                        <div class="btn-floating orange" id="pause"><i class="material-icons">pause</i></div>
+                                    </li>
+                                    <li>
+                                        <div class="btn-floating red" id="reset"><i class="material-icons">stop</i></div>
+                                    </li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col s12 right-align" id="intervalInfo"></div>
+
+                    </div>
+                    <form id="addTaskForm">
+                        <div class="input-field validate">
+                            <input id="newTaskTitle" type="text">
+                            <label for="newTaskTitle">Añadir nueva tarea</label>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+<script type="text/javascript" src="../../../node_modules/hammerjs/hammer.min.js"></script>
+<script type="text/javascript" src="../../../node_modules/materialize-css/dist/js/materialize.js"></script>
+<script>
+    require('../../renderer.js');
+</script>
+
+</html>
