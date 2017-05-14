@@ -1,33 +1,34 @@
 {
-    "name": "pomodorotodo",
-    "version": "1.0.0",
-    "description": "A simple todo-list Electron application combined with the Pomodoro technique.",
-    "main": "main.js",
-    "scripts": {
-        "start": "electron .",
-        "build:win": "electron-packager . Pomodorotodo --out=dist --arch=all --platform=win32 --ignore='^/dist$' --prune --overwrite  --electron-version",
-        "build:linux": "electron-packager . Pomodorotodo --out=dist --arch=all --platform=linux --ignore='^/dist$' --prune --overwrite --electron-version",
-        "build:osx": "electron-packager . Pomodorotodo --out=dist --ignore='^/dist$' --overwrite --prune --arch=all --platform=darwin --electron-version",
-        "build": "npm run build:win && npm run build:linux && npm run build:osx"
-    },
-    "repository": "https://github.com/i42pavar/Pomodorotodo.git",
-    "keywords": [
-        "Electron",
-        "Pomodoro",
-        "todolist",
-        "productivity"
-    ],
-    "author": "Rafael Jesús Palomino Vargas",
-    "license": "GNU GPL v3",
-    "devDependencies": {
-        "electron": "~1.6.9",
-        "electron-packager": "^8.7.0"
-    },
-    "dependencies": {
-        "electron-json-storage": "^3.0.5",
-        "jquery": "^3.2.1",
-        "materialize-css": "^0.98.2",
-        "moment": "^2.18.1",
-        "node-notifier": "^5.1.2"
-    }
+  "name": "pomodorotodo",
+  "version": "1.0.0",
+  "description": "A simple todo-list Electron application combined with the Pomodoro technique.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:win": "electron-packager . Pomodorotodo --out=dist --arch=all --platform=win32 --ignore='^/dist$' --prune --overwrite  --electron-version",
+    "build:linux": "electron-packager . Pomodorotodo --out=dist --arch=all --platform=linux --ignore='^/dist$' --prune --overwrite --electron-version",
+    "build:osx": "electron-packager . Pomodorotodo --out=dist --ignore='^/dist$' --overwrite --prune --arch=all --platform=darwin --electron-version",
+    "build": "npm run build:win && npm run build:linux && npm run build:osx"
+  },
+  "repository": "https://github.com/i42pavar/Pomodorotodo.git",
+  "keywords": [
+    "Electron",
+    "Pomodoro",
+    "todolist",
+    "productivity"
+  ],
+  "author": "Rafael Jesús Palomino Vargas",
+  "license": "GNU GPL v3",
+  "devDependencies": {
+    "electron": "~1.6.9",
+    "electron-packager": "^8.7.0"
+  },
+  "dependencies": {
+    "electron-json-storage": "^3.0.5",
+    "hammerjs": "^2.0.8",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.98.2",
+    "moment": "^2.18.1",
+    "node-notifier": "^5.1.2"
+  }
 }
