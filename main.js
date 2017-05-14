@@ -18,6 +18,7 @@
 
 
 var electron = require('electron');
+var nativeImage = require('electron').nativeImage;
 // Module to control application life.
 var app = electron.app;
 // Module to create native browser window.
@@ -41,12 +42,19 @@ function createWindow() {
         title: 'Pomodorotodo',
         frame: false,
         movable: true,
-        icon: path.join(__dirname, 'app/Presentation/View/images/logo_512.ico')
+        icon: path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png')
     });
 
-    mainWindow.setAppDetails({
-        appIconPath: path.join(__dirname, 'app/Presentation/View/images/logo_512.ico')
-    });
+    if (process.platform === 'win32') {
+        mainWindow.setAppDetails({
+            appIconPath: path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png')
+        });
+    }
+
+    if (process.platform === 'linux') {
+        var img = nativeImage.createFromPath(path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png'));
+        mainWindow.setIcon(img);
+    }
 
     // and load the index.html of the app.
     mainWindow.loadURL(url.format({
