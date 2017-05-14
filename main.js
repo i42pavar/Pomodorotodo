@@ -42,7 +42,7 @@ function createWindow() {
         title: 'Pomodorotodo',
         frame: false,
         movable: true,
-        icon: path.join(__dirname, 'app/Presentation/View/images/logo_512.png')
+        icon: (process.platform !== 'darwin') ? path.join(__dirname, 'app/Presentation/View/images/logo_512.png') : path.join(__dirname, 'app/Presentation/View/images/logo_512.icns')
     });
 
     if (process.platform === 'win32') {
