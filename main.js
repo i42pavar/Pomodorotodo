@@ -42,17 +42,17 @@ function createWindow() {
         title: 'Pomodorotodo',
         frame: false,
         movable: true,
-        icon: path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png')
+        icon: path.join(__dirname, 'app/Presentation/View/images/logo_512.png')
     });
 
     if (process.platform === 'win32') {
         mainWindow.setAppDetails({
-            appIconPath: path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png')
+            appIconPath: path.join(__dirname, 'app/Presentation/View/images/logo_512.ico')
         });
     }
 
     if (process.platform === 'linux') {
-        var img = nativeImage.createFromPath(path.join(__dirname, 'app/Presentation/View/images/icon_64x64.png'));
+        var img = nativeImage.createFromPath(path.join(__dirname, 'app/Presentation/View/images/logo_512.png'));
         mainWindow.setIcon(img);
     }
 
