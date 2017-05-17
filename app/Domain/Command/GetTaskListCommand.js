@@ -1,5 +1,5 @@
 /*
-    Pomodoro, a simple todo-list Electron application combined with the Pomodoro technique
+    Pomodorotodo, a simple todo-list Electron application combined with the Pomodoro technique
     Copyright (C) <2017>  Rafael Jesús Palomino Vargas
 
     This program is free software: you can redistribute it and/or modify
