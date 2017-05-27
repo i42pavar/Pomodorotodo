@@ -80,7 +80,7 @@ var DrawerPresenter = (function() {
     }
 
     function onLicenseCallBack() {
-        shell.openItem('LICENSE');
+        shell.openExternal('https://github.com/i42pavar/Pomodorotodo/blob/master/LICENSE');
     }
 
     function onGithubCallBack() {
